@@ -314,7 +314,7 @@ Complex mk_imaginary_unit() {
 Alternatively:
 ```C++
 Complex mk_imaginary_unit() {
-  Complex sqrt_m1 = {0, -1};
+  Complex sqrt_m1 = {0, 1};
   return sqrt_m1;
 }
 ```
@@ -350,7 +350,6 @@ int global;
 
 int main(int argv, char* argv[]) {
   int automatic;
-  }
   std::cout << "Global int = " << global << std::endl;
   std::cout << "Local int = " << automatic << std::endl;
 }
