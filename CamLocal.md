@@ -15,3 +15,11 @@ Coffee - sadly not provided
 Lunch - we will provide a voucher for lunch at the University Centre
 ![University Centre](lunch.png)
 
+## Cirrus access
+
+If you are having timeout issues on Cirrus, try
+
+```
+ssh trainXXX@login.cirrus.ac.uk
+```
+
