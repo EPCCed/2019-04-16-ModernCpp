@@ -109,7 +109,7 @@ have *member functions*.
 ```C++
 struct Complex {
   double magnitude() const;
-  Complex& operator+(const Complex&);
+  Complex& operator+=(const Complex&);
 
   double real;
   double imag;
@@ -145,7 +145,7 @@ double Complex::magnitude() const {
 # Member functions
 
 ```C++
-Complex& Complex::operator+=(const Complex& increment) {
+Complex& Complex::operator+(const Complex& increment) {
   real += increment.real;
   imag += increment.imag;
   return *this;
@@ -229,7 +229,6 @@ Complex operator+(const Complex& a, const Complex& b) {
 
 This is just a function (with an unusual name) that takes two complex
 numbers and returns one.
-
 
 ---
 template: titleslide
