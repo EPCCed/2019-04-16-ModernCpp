@@ -281,7 +281,7 @@ one
 
 -   assigment - you need to bind it to name
 
--   inequality comparison (`it `= end!) - you need to know when you are
+-   inequality comparison (`it != end`) - you need to know when you are
 done
 
 ![:fn_show]( )
