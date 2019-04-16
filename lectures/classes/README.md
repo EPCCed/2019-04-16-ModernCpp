@@ -145,7 +145,7 @@ double Complex::magnitude() const {
 # Member functions
 
 ```C++
-Complex& Complex::operator+(const Complex& increment) {
+Complex& Complex::operator+=(const Complex& increment) {
   real += increment.real;
   imag += increment.imag;
   return *this;
@@ -230,15 +230,6 @@ Complex operator+(const Complex& a, const Complex& b) {
 This is just a function (with an unusual name) that takes two complex
 numbers and returns one.
 
-<!-- To let this function touch the private members of the class, we must -->
-<!-- declare that it is a `friend`: -->
-
-<!-- ```C++ -->
-<!-- class Complex { -->
-<!--   // ... -->
-<!--   friend Complex operator+(const Complex&, const Complex&); -->
-<!-- }; -->
-<!-- ``` -->
 
 ---
 template: titleslide
