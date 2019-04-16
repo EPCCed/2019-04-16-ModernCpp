@@ -574,7 +574,7 @@ You can then use the natural syntax when manipulating these in other
 code:
 
 ```C++
-Vector c = a + b;
+Complex c = a + b;
 ```
 
 We'll come back to this.
