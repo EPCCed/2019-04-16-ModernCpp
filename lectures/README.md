@@ -6,4 +6,5 @@
 * [Containers and iterators](containers-iterators)
 * [Algorithms, lambdas and traits](algorithms-lambdas-traits)
 * [Threads with C++](threads-1) and [Further topics with threads](threads-2)
+* [Using the Eigen3 library](eigen/using-eigen.pdf)
 * [C++ frameworks for portable performance](frameworks-kokkos)
