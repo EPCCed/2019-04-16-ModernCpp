@@ -250,7 +250,7 @@ std::vector<float> SquareAndAddConst(const std::vector<float>& x, float c) {
 std::vector<float> SquareAndAddConst(const std::vector<float>& x, float c) {
   std::vector<float> ans;
   ans.resize(x.size());
-  auto func = [c](double z) { return z*z + c; };
+  auto func = [c] (double z) { return z*z + c; };
   std::transform(x.begin(), x.end(), ans.begin(),
 	func);
   return ans;
@@ -265,7 +265,7 @@ std::vector<float> SquareAndAddConst(const std::vector<float>& x, float c) {
   std::vector<float> ans;
   ans.resize(x.size());
   std::transform(x.begin(), x.end(), ans.begin(),
-	[c](double z) { return z*z + c; });
+	[c] (double z) { return z*z + c; });
   return ans;
 }
 ```
@@ -335,7 +335,7 @@ std::sort(molecules.begin(), molecules.end(),
     be `const`.
 
 ```C++
-const auto rands =[&size] -> std::vector<float> {
+const auto rands = [&size] () -> std::vector<float> {
   std::vector<float> ans(size);
   for (auto& el: ans) {
     el = GetRandomNumber();
@@ -390,7 +390,7 @@ template: titleslide
 Several headers contain these:
 
 -   The header `<type_traits>` has lots of information for handling
-    types. E.g. `std::is_pointer<int>::value` would be false.
+    types. E.g. `std::is_pointer<int>::value` has value of false.
 
 -   `std::numeric_limits<T>` gives lots of parameters for the built in
     number types, such as largest and smallest values, whether they are
@@ -469,7 +469,8 @@ types:
 ```C++
 template <class T>
 struct DataTypeTraits {
-  // Don't provide a default definition!
+  // Don't provide a default definition
+  // (because there is no generic way to make an MPI datatype)
   static MPI_Datatype Get();
 };
 
@@ -502,6 +503,6 @@ MPI_Datatype DataTypeTraits<float>::Get() {
 // etc
 ```
 
-If we try to communicate a data type we haven't specialised for, we will
-get a compile time error!
+If we try to communicate a data type we haven't specialised for, we
+will get a compile time error!
 
